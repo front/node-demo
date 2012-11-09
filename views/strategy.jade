@@ -3,3 +3,7 @@ extends layout
 block content
 	h1= title
 	h2= strategy.vision
+	form(name="input", action="/strategy/" + strategy.title, method="post")
+		| Goal:
+		input(type="text", name="goal",required="required")
+		input(type="submit", value="Submit")

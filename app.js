@@ -30,6 +30,7 @@ app.get('/', routes.index);
 app.post('/', routes.post);
 app.get('/strategies', routes.strategies);
 app.get('/strategy/:title', routes.strategy);
+app.post('/strategy/:title', routes.postNewGoal);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

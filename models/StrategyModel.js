@@ -6,7 +6,7 @@ var StrategySchema = new Schema({
 	id        : ObjectId,
 	title     : { type: String, required: true},
 	vision    : { type: String},
-	goals     : [Schema.Types.ObjectId],
+	goals     : { type: String},
 });
 
 module.exports = mongoose.model('Strategy', StrategySchema);
