@@ -1,7 +1,7 @@
 // Set up db and models
 var mongoose    = require('mongoose'),
 strategyModel = require('../models/StrategyModel');
-goalsModel = require('../models/StrategyModel');
+goalModel = require('../models/StrategyModel');
 
 // Connect to DB
 mongoose.connect('mongodb://localhost/members');
@@ -49,13 +49,27 @@ exports.strategy = function(req,res){
 };
 
 exports.postNewGoal = function(req, res){
-	strategyModel.update({title: req.params.title},{goals: "asdf"},function(err){
+
+	//Save new goal
+	goal = new goalModel();
+	goal.title = req.body.goal;
+	goal.save(function (err){
 		if(err){
-			console.log("error updating");
+			console.log(err);
 		}
-		else{
-			console.log("Updating complete");
-		}
+		else {
+			console.log( "saved goal: " + req.body.goal);
+			strategyModel.update({title: req.params.title}, { $push: {goals: req.body.goal} }, function(err){
+				if(err){
+					console.log("error updating");
+				}
+				else{
+					console.log("Updating complete");
+				}
+			});
+		};
+
+
 
 	});
 	strategyModel.find({title: req.params.title}, function(err,searchResult){
