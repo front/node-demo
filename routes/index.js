@@ -4,7 +4,7 @@ strategyModel = require('../models/StrategyModel');
 goalModel = require('../models/StrategyModel');
 
 // Connect to DB
-mongoose.connect('mongodb://localhost/members');
+mongoose.connect('mongodb://localhost/StrategyMaker');
 
 
 
@@ -32,7 +32,6 @@ exports.post = function(req,res){
 
 
 exports.strategies = function(req,res){
-	console.log('strategies');
 	strategyModel.find({}, function(err,searchResult){
 		if(err){
 			console.log(err);
@@ -40,11 +39,12 @@ exports.strategies = function(req,res){
 		res.render('strategies.jade', {title: 'Strategies', strategies: searchResult});
 	});
 };
+
+
 exports.strategy = function(req,res){
 	strategyModel.find({title: req.params.title}, function(err,searchResult){
-		console.log('search');
 		console.log(searchResult[0]);
-		res.render('strategy.jade', {title: "Strategy: " + req.params.title, strategy: searchResult[0]});
+		res.render('strategy.jade', {title: req.params.title, strategy: searchResult[0]});
 	});
 };
 
@@ -67,15 +67,19 @@ exports.postNewGoal = function(req, res){
 					console.log("Updating complete");
 				}
 			});
-		};
-
-
-
+		}
 	});
-	strategyModel.find({title: req.params.title}, function(err,searchResult){
-		console.log('search');
-		console.log(searchResult[0]);
-		res.render('strategy.jade', {title: "Strategy: " + req.params.title, strategy: searchResult[0]});
-	});
+		res.redirect('/strategy/' + req.params.title);
 
+};
+exports.deleteAll = function(req, res){
+	strategyModel.remove({},function(err){
+		if (!err){
+			console.log( "Removed all");
+		}
+		else{
+			console.log("Error while removing: " + err);
+		}
+	});
+	res.redirect('/strategies');
 };

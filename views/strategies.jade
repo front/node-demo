@@ -1,18 +1,22 @@
 extends layout
 
 block content
-	h1 Strategies
-	- if (strategies.length)
-		table.zebra-striped
-			thead
-				tr
-					th Title
-					th Vision
-			tbody
-				- strategies.forEach(function(strategy){
+	.container
+		h1 Strategies
+		- if (strategies.length)
+			table.zebra-striped
+				thead
 					tr
-						td= strategy['title']
-						td= strategy['vision']
-				- })
-	- else
-		p No registered strategies yet.
+						th Title
+						th Vision
+				tbody
+					- strategies.forEach(function(strategy){
+						tr
+							td
+								a(href="/strategy/"+  strategy.title)= strategy.title
+
+							td= strategy['vision']
+					- })
+		- else
+			p No registered strategies yet.
+			a(href="/") Create a new one here!
