@@ -39,4 +39,6 @@ mongoose.connect('mongodb://localhost/members');
  		res.render('strategies.jade', {title: 'Strategies', strategies: searchResult})
  	});
  }
-
+exports.strategy = function(req,res){
+	res.render('strategy.jade', {title: "Strategy", id: req.query["id"]});
+}
