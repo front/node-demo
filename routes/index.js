@@ -8,7 +8,7 @@ mongoose.connect('mongodb://localhost/members');
 
 
  exports.index = function(req, res){
- 	res.render('index', { title: 'Express' });
+ 	res.render('index', { title: 'Create new strategy' });
  };
 
  exports.post = function(req,res){
@@ -26,7 +26,7 @@ mongoose.connect('mongodb://localhost/members');
  		}
  	});
 
- 	res.render('index.jade', { title: 'My Registration App'});
+ 	res.render('index.jade', { title: 'My strategies'});
  }
 
 
