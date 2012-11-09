@@ -1,0 +1,11 @@
+@import 'susy';
+
+body {
+  @include container;
+  @include susy-grid-background;
+}
+
+.page-title {
+  color: red;
+  @include span-columns(3)
+}
