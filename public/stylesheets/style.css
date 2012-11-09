@@ -1,8 +1,22 @@
-/* line 3, ../sass/style.scss */
-body {
+/* line 14, ../../../../../.rvm/gems/ruby-1.9.3-p286/gems/susy-1.0.1/sass/susy/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 7, ../sass/style.scss */
+.goal, .action {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 13, ../sass/style.scss */
+.page {
   *zoom: 1;
-  max-width: 59em;
-  _width: 59em;
+  max-width: 61em;
+  _width: 61em;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1em;
@@ -23,17 +37,60 @@ body {
   background-clip: content-box;
 }
 /* line 38, ../../../../../.rvm/gems/ruby-1.9.3-p286/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-body:after {
+.page:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 8, ../sass/style.scss */
+/* line 18, ../sass/style.scss */
 .page-title {
-  color: red;
-  width: 23.72881%;
+  width: 100%;
   float: left;
   margin-right: 1.69492%;
   display: inline;
+  text-align: center;
+}
+
+/* line 24, ../sass/style.scss */
+.strategy-description {
+  text-align: center;
+}
+
+/* line 28, ../sass/style.scss */
+.goal {
+  width: 49.15254%;
+  float: left;
+  margin-right: 1.69492%;
+  display: inline;
+  border: 1px solid #dedede;
+  background-color: #f3f3f3;
+  padding: 2em;
+  margin-bottom: 2em;
+}
+/* line 36, ../sass/style.scss */
+.goal.even {
+  float: right;
+  margin-right: 0;
+  #margin-left: -1em;
+  display: inline;
+}
+
+/* line 41, ../sass/style.scss */
+.goal-title {
+  font-size: 1.5em;
+  line-height: 1.4em;
+}
+
+/* line 46, ../sass/style.scss */
+.action {
+  width: 100%;
+  float: left;
+  margin-right: 1.69492%;
+  display: inline;
+}
+/* line 50, ../sass/style.scss */
+.action .title {
+  font-size: 1.2em;
+  line-height: 1.3em;
 }
