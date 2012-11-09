@@ -6,10 +6,10 @@
 /* line 11, ../sass/style.scss */
 .goal {
   background: #f3f3f3;
-  padding: 2em;
+  margin-bottom: 2em;
 }
 
-/* line 20, ../sass/style.scss */
+/* line 21, ../sass/style.scss */
 .action-title {
   font-size: 1em;
 }
