@@ -1,54 +1,22 @@
-@import 'susy';
-// border-box-sizing()
-@include border-box-sizing;
-
-
-// Silent extendebals
-%no-liststyle {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.page {
-  @include container;
-  @include susy-grid-background;
-}
-
-.page-title {
-  
-  @include span-columns(12,12);
+%center {
   text-align: center;
 }
 
-.strategy-description {
-  text-align: center;
+$grayLighter: #f3f3f3;
+
+.page-title, .strategy-description {
+  @extend %center;
 }
 
 .goal {
-  @include span-columns(6,12);
-  @extend %no-liststyle;
-  border: 1px solid #dedede;
-  background-color: #f3f3f3;
+  background: $grayLighter;
   padding: 2em;
-  margin-bottom: 2em;
-
-  &.even {
-    @include omega;
-  }
 }
 
 .goal-title {
-  font-size: 1.5em;
-  line-height: 1.4em;
+  @extend %center;
 }
 
-.action {
-  @include span-columns(12,12);
-  @extend %no-liststyle;
-
-  .title {
-    font-size: 1.2em;
-    line-height: 1.3em;
-  }
+.action-title {
+  font-size: 1em;
 }

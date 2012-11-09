@@ -1,29 +1,22 @@
 extends layout
 
 block content
-	h1= title
-	h2= strategy.vision
-	form(name="input", action="/strategy/" + strategy.title, method="post")
-		| Goal:
-		input(type="text", name="goal",required="required")
-		input(type="submit", value="Submit")
+  h1= title
+  h2= strategy.vision
+  form(name="input", action="/strategy/" + strategy.title, method="post")
+    | Goal:
+    input(type="text", name="goal",required="required")
+    input(type="submit", value="Submit")
 
-  div.page
-    h1.page-title.strategy-title Growing my company into a Fortune 500
-    p.description.strategy-description I want to own a company that is bigger than my neighbour's, so I can brag about it when we BBQ.
-    ul.goal
-      li
-        h1.title.goal-title Hire 99 excellent sellers
-        ul.action
-          li
-            h1.title Call my friends to check if they want to work there.
-            p.description I don't have a company yet.
-            div.date 17.12.1012
-    ul.goal.even
-      li
-        h1.title.goal-title Hire 99 excellent sellers
-        ul.action
-          li
-            h1.title Call my friends to check if they want to work there.
-            p.description I don't have a company yet.
-            div.date 17.12.1012
+  div.container
+    section.strategy.span12
+      h1.page-title.strategy-title Growing my company into a Fortune 500
+      hr
+      p.description.strategy-description.lead I want to own a company that is bigger than my neighbour's, so I can brag about it when we BBQ.
+      hr
+      div.goal.span6
+        h2.title.goal-title Hire 99 excellent sellers
+        blockquote.todo.action
+          h3.title.action-title Call my friends to check if they want to work there.
+          p.description I don't have a company yet.
+          div.date 17.12.1012
