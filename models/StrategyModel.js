@@ -9,4 +9,4 @@ var StrategySchema = new Schema({
 	goals : { type: String},
 });
 
-module.exports = mongoose.model('Actions', ActionSchema);
+module.exports = mongoose.model('Strategy', StrategySchema);
