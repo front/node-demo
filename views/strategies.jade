@@ -1,43 +1,18 @@
 extends layout
 
 block content
-	div.page
-		h1.page-title.strategy-title Growing my company into a Fortune 500
-		p.description.strategy-description I want to own a company that is bigger than my neighbour's, so I can brag about it when we BBQ.
-		ul.goal
-			li
-				h1.title.goal-title Hire 99 excellent sellers
-				ul.action
-					li
-						h1.title Call my friends to check if they want to work there.
-						p.description I don't have a company yet.
-						div.date 17.12.1012
-		ul.goal.even
-			li
-				h1.title.goal-title Hire 99 excellent sellers
-				ul.action
-					li
-						h1.title Call my friends to check if they want to work there.
-						p.description I don't have a company yet.
-						div.date 17.12.1012
-
-
-
-
-
-//- block content
-//- 	h1 Strategies
-//- 	- if (strategies.length)
-//- 		table.zebra-striped
-//- 			thead
-//- 				tr
-//- 					th Title
-//- 					th Vision
-//- 			tbody
-//- 				- strategies.forEach(function(strategy){
-//- 					tr
-//- 						td= strategy['title']
-//- 						td= strategy['vision']
-//- 				- })
-//- 	- else
-//- 		p No registered strategies yet.
+	h1 Strategies
+	- if (strategies.length)
+		table.zebra-striped
+			thead
+				tr
+					th Title
+					th Vision
+			tbody
+				- strategies.forEach(function(strategy){
+					tr
+						td= strategy['title']
+						td= strategy['vision']
+				- })
+	- else
+		p No registered strategies yet.
